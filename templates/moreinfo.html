@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% blcok title %}Bensinstod{% endblock %}
+{% block content %}
+
+    <h2> Nanari upplysingar Bensinstodvar </h2>
+    {% for item in gogn[results] %}
+    <div>
+        {% if.item.key == k %}
+        <h3>Soluadili: {{item.company}}</h3>
+        <h3>Stadur: {{item.name}}</h3>
+        <h4>Verd a 1 litra bensini, 95 oktan: {{item.bensin95}} kr.</h4>
+        <h4>Verd a 1 litra dieseloliu: {{item.diesel}} kr.</h4>
+    </div>
+    <div>
+        <h4>stadsettning bensinstodvar</h4>
+        <u1>
+            <li> Breiddargrada: {{item.geo.lat}} </li>
+            <li> Lengdargrata: {{item.</li>
+        </u1>
+    </div>
+    {% endblock %}

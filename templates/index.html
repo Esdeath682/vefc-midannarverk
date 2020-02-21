@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="wrapper">
+    {% set oneco = [] %}
+    {% for item in gogn['results'] %}
+        {% if item.company not in oneco %}
+            {do oneco.append(item.company)}
+            <div class="box">
+                <a href="/company/{{ item.company }}">
+                    <img src="static/{{ item.company }}.png"title="{{ item.company }}">
+                </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</main>
+<p> sidast uppfaert: {{ gogn.timestampPriceCheck | format_time }} </p>
+<div class="kort">
+    <h2> besta verdid</h2>
+    <h4> Odyrasta bensinid: <i>{{ minP[0] }} kr.</i>er hja {{ manP[1] }}, {{ manP[2]}} </h4>
+    <h4> odyrasta diesel olian: { %raw% }<i>{{ minD[0] }} kr.</i> er hja {{ minD[1] }}, {{ minD[2] }}{endraw}</h4>
+    <p>sidast uppfaert: {{ gogn timestampPriceCheck }} </p>
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+
+

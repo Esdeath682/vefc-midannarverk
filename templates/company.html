@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Eldsneytisverd a islandi{% endblock %}
+{% block content %}
+
+<table>
+    <caption>Allar stodvar fyrirtaekisins</caption>
+    <tr>
+        <th>Fyrirtaeki</th>
+        <th>Stadur</th>
+    </tr>
+    {% set cnt = [] %}
+    {% if for item in gogn['results'] %}
+    <tr>
+        {% for item.company == com %}
+        {% do cnt.append(item.company) %}
+        <td>{{ item.company }} </a></td>
+        <td><a href="/moreinfo/{{ item.key }}">{{ item.name }}</a></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+<h3>Fjoldi stodva: {{ cnt | length }}</h3>
+
+
+{% endblock %}
